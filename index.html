@@ -23,6 +23,7 @@
             height: 15px;
             background-color: rgba(10, 10, 10, 0.15);
             overflow: hidden;
+            display: none;
         }
 
         .progress-bar {
@@ -30,6 +31,7 @@
             height: 100%;
             background: linear-gradient(90deg, #daddda, #a6a8a4);
             transition: width 0.3s ease;
+            display: none;
         }
 
         .progress-status-text {
@@ -37,6 +39,7 @@
             left: 5px;
             bottom: 15px;
             text-shadow: 1px  1px 2px rgba(0, 0, 0, 0.3);
+            display: none;
         }
 
         .progress-files-text {
@@ -45,6 +48,7 @@
             bottom: 15px;
             text-shadow: 1px  1px 2px rgba(0, 0, 0, 0.3);
             text-align: right;
+            display: none;
         }
 
         .background-div {
@@ -67,6 +71,7 @@
             position: fixed;
             height: 125px;
             width: 125px;
+            background-color: transparent;
         }
 
         .map-text {
@@ -76,6 +81,23 @@
             font-size: 40px; 
             line-height: 1;
             text-align: left;
+        }
+
+        .server-name {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; 
+            height: 100vh;  
+            
+            font-size: 48px; 
+
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            text-align: center;
+            
+            pointer-events: none;
         }
         
     </style>
@@ -95,6 +117,8 @@
 
     <span class="progress-status-text"></span>
     <span class="progress-files-text"></span>
+    
+    <p class="server-name"></p>
 
     <script type="text/javascript">
         const map_img = document.querySelector('.map-img');
@@ -102,15 +126,26 @@
 
         const statusText = document.querySelector("progress-status-text");
         const filesText = document.querySelector(".progress-files-text");
+        
+        const serverNameText = document.querySelector(".server-name")
 
         let totalFiles = 0;
         let remaningFiles = 0;
 
+        const mapNames = {
+            "gm_metro_kalinin_v3":     "Калининская линия",
+            "gm_metro_tkl_v1":         "Таганско-Краснопресненская линия"
+        };
+
+
         function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, lang, gamemodeNice) {
 
             let mapicon = "asset://mapimage/" + mapname;
+            let friendlyName = mapNames[mapname] || mapname;
+            let cleanedStatus = status.replace(/server/i, "").trim();
 
-            map_text.textContent = mapname;
+            serverNameText.innerHTML = cleanedStatus + "<br>Metrostroi Server";
+            map_text.textContent = friendlyName;
             map_img.setAttribute("src", mapicon);
         }
 
