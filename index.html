@@ -142,7 +142,7 @@
 
             let mapicon = "asset://mapimage/" + mapname;
             let friendlyName = mapNames[mapname] || mapname;
-            let cleanedStatus = status.replace(/server/i, "").trim();
+            let cleanedStatus = servername.replace(/server/i, "").trim();
 
             serverNameText.innerHTML = cleanedStatus + "<br>Metrostroi Server";
             map_text.textContent = friendlyName;
