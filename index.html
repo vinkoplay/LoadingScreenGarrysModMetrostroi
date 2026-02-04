@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
         body {
             font-family: 'Comic Neue', cursive;
@@ -124,7 +123,7 @@
         const map_img = document.querySelector('.map-img');
         const map_text = document.querySelector('.map-text');
 
-        const statusText = document.querySelector("progress-status-text");
+        const statusText = document.querySelector(".progress-status-text");
         const filesText = document.querySelector(".progress-files-text");
         
         const serverNameText = document.querySelector(".server-name")
@@ -133,10 +132,36 @@
         let remaningFiles = 0;
 
         const mapNames = {
-            "gm_metro_kalinin_v3":     "Калининская линия",
-            "gm_metro_tkl_v1":         "Таганско-Краснопресненская линия"
-        };
+            "gm_metro_kalinin_v3":            "Калининская линия",
+            "gm_metro_tkl_v1":                "Таганско-Краснопресненская линия",
+            "gm_metro_nekrasovskaya_line_v6": "Некрасовская линия",
+            "gm_metro_kaluzhskaya_line6":     "Калужско-Рижская линия",
+            "gm_metro_minsk_1984":            "Минский метрополитен 1984",
+            "gm_metro_mosldl_v1":             "Люблинско-Дмитровская линия",
+            "gm_metro_nsk_line_2_v7":         "Новосибирский метрополитен",
+            "metropack_map_for_screens_v1":   "Карта для скринов",
+            "gm_filevskya_line_4":            "Филёвская линия",
+            "gm_smr_1993":                    "Самарский метрополитен 1993",
 
+            "gm_metro_sunnytown_v2":          "Sunny Town",
+            "gm_metro_surfacemetro_w":        "Наземное метро",
+            "gm_metrostroi_b46_lite":         "Metrostroi B46 Lite",
+            "gm_metrostroi_b50":              "Metrostroi B50",
+            "gm_metrostroi_b51":              "Metrostroi B51",
+            "gm_metrostroi_b52":              "Metrostroi B52",
+            
+            "gm_jar_pll":                     "JAR PLL",
+            "gm_jar_pll_redux_v1":            "JAR PLL Redux",
+            "gm_jar_pll_remastered_v13":      "JAR PLL Remastered v13",
+            "gm_metro_jar_imagine_line_v4":   "JAR Imagine Line",
+            
+            "gm_metro_crossline_n4b":         "Crossline N4b",
+            "gm_metro_crossline_r199h":       "Crossline R199h",
+            "gm_metro_crossline_m12":         "Crossline M12",
+            
+            "gm_metro_virus":                 "Metro Virus",
+            "gm_mustox_neocrimson_line_a":    "Neo Crimson Line"
+        };
 
         function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, lang, gamemodeNice) {
 
@@ -168,7 +193,7 @@
         }
 
         function SetFilesRemaining(remaining) {
-            remaningFiles = remaningFiles;
+            remaningFiles = remaning;
             updateFiles();
         }
 
